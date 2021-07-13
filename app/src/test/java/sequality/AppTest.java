@@ -18,4 +18,42 @@ public class AppTest {
     App classUnderTest = new App();
     assertEquals("Hello World!", classUnderTest.getGreeting());
   }
+
+  @Test
+  public void testSum() {
+    App calculate = new App();
+    int expected = 5;
+    assertEquals(expected, calculate.sum(2, 3));
+    System.out.printf("%d", calculate.sum(2, 3));
+  }
+
+  @Test
+  public void testAve() {
+    App testave = new App();
+    double expected2 = 2.5;
+    double expected4 = 5.5;
+    assertEquals(expected2, testave.ave(testave.sum(2, 3), 2), 0);
+    System.out.printf("%.1f", testave.ave(testave.sum(2, 3), 2));
+    assertEquals(expected4, testave.ave(testave.sum2(1, 10), 10), 0);
+    System.out.printf("%.1f", testave.ave(testave.sum(1, 10), 10));
+  }
+
+  @Test
+  public void testallsum() {
+    App testallsum = new App();
+    int expected3 = 55;
+    assertEquals(expected3, testallsum.sum2(1, 10));
+    System.out.printf("%d", testallsum.sum2(2, 3));
+  }
+
+  @Test
+  public void testoesum() {
+    App testoesum = new App();
+    int expected5 = 25;
+    int expected6 = 30;
+    assertEquals(expected5, testoesum.sum3(1, 10, 1));
+    System.out.printf("%d", testoesum.sum3(1, 10, 1));
+    assertEquals(expected6, testoesum.sum3(1, 10, 2));
+    System.out.printf("%d", testoesum.sum3(1, 10, 2));
+  }
 }
